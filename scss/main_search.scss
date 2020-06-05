@@ -1,0 +1,96 @@
+@import 'imports';
+
+#search {
+    position: absolute;
+    top: 0; bottom: 0;
+    width: 100%;
+}
+
+#search.show_map {
+    background-color: rgba(75, 75, 75, 0.8);
+}
+
+#search>.search_field_single>.field_container{
+    position: absolute;
+    top: $search_single_top;
+    left: $margin_x;
+    right: $margin_x;
+}
+
+#search_help, #slogan {
+  margin: 0 auto;
+  text-align: center;
+  color: $lighter_grey;
+  font-size: $text_small;
+  font-weight: bold;
+  line-height: 1.1;
+}
+
+#search_help{
+  display: none;
+  max-width: 200px;
+}
+
+#autocomplete {
+    display:none;
+    margin: 0 auto;
+    width: 100%;
+    height: 100px;
+    overflow: scroll;
+    overflow-x: hidden;
+    text-align: left;
+    line-height: 2.5;
+    text-indent: 10px;
+}
+#autocomplete>li>a
+{
+    color: $lighter_grey;
+    font-size: $text_normal;
+    font-weight: bold;
+
+}
+#autocomplete::-webkit-scrollbar {
+    display:none;
+}
+
+
+#search .info {
+    z-index: 5;
+    position: absolute;
+    display: block;
+    left: $margin_x;
+    bottom: $margin_y;
+    @include info_button;
+}
+
+#publisher {
+    z-index: 4;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    bottom: $margin_y;
+}
+
+#show_map {
+    z-index: 5;
+    position: absolute;
+    bottom: $margin_y;
+    right: $margin_x;
+    @include show_map;
+}
+
+#full_site {
+    z-index: 4;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    bottom: $margin_y_jump_to_online;
+    display: none;
+
+}
+
+#full_site a {
+    color: $lighter_grey;
+    font-size: $text_small;
+    font-weight: bold;
+}

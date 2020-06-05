@@ -1,0 +1,11 @@
+@mixin border_radius($r) {
+    -webkit-border-radius: $r;
+    -moz-border-radius: $r;
+    border-radius: $r;
+
+    //hack for Samsung Galaxy S4 border radius
+    border-top-left-radius: $r;
+    border-top-right-radius: $r;
+    border-bottom-left-radius: $r;
+    border-bottom-right-radius: $r;
+}

@@ -1,0 +1,753 @@
+@import "imports";
+
+/* TODO: move common items for result/details to common file.
+   TODO: separate result and details*/
+
+#list>.result p.header {
+    font-size: $text_small;
+}
+#list>.result p {
+    line-height: 1.3;
+    max-width: 80%;
+    font-size: $text_smaller;
+}
+
+#list>.result p.noHits {
+    line-height: 1.3;
+    max-width: 80%;
+    font-size: $text_smaller;
+    margin: 10px 10px;
+}
+
+.button {
+    position: relative;
+    display: inline-block;
+    float: right;
+    padding: $margin_y 0;
+    margin-right: $margin_x;
+}
+
+.button .image {
+    position: relative;
+    height: $button_img_height;
+    width: $button_img_width;
+}
+
+.button .label {
+    margin-top: 5px;
+    text-align: center;
+    @include label_text;
+}
+
+/* COMMON ENDS HERE. */
+
+#list .category.buttons a.full {
+  display: block;
+  padding: $margin_y 0;
+  position: relative;
+}
+
+#list .category {
+    position: relative;
+    float: left;
+    width: 100%;
+    border-bottom: 1px solid $lighter_grey;
+}
+
+#list .category .head {
+    font-weight: bold;
+    margin-top: $margin_y;
+    font-size: $text_big;
+    margin-left: $margin_x;
+}
+
+#list .buttons{
+	/* IE10 Consumer Preview */
+	background-image: -ms-linear-gradient(top, #FFFFFF 10%, #CCCCCC 180%);
+
+	/* Mozilla Firefox */
+	background-image: -moz-linear-gradient(top, #FFFFFF 10%, #CCCCCC 180%);
+
+	/* Opera */
+	background-image: -o-linear-gradient(top, #FFFFFF 10%, #CCCCCC 180%);
+
+	/* Webkit (Safari/Chrome 10) */
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.1, #FFFFFF), color-stop(1.8, #CCCCCC));
+
+	/* Webkit (Chrome 11+) */
+	background-image: -webkit-linear-gradient(top, #FFFFFF 10%, #CCCCCC 180%);
+
+	/* W3C Markup, IE10 Release Preview */
+	background-image: linear-gradient(to bottom, #FFFFFF 10%, #CCCCCC 180%);
+}
+
+#list .category span.email_link,
+#list .category a.homepage_link
+{
+    font-size: $text_tinier;
+    font-weight: bold;
+    color: #AAAAAA;
+}
+
+#list .category span.homepage_link
+{
+    font-size: $text_tinier;
+    font-weight: bold;
+    color: #AAAAAA;
+}
+
+#list .category .email_link,
+#list .category .homepage_link,
+#list .category .deeplink_link,
+#list .category .facebook_link,
+#list .category .skype_link,
+#list .category .linkedin_link,
+#list .category .twitter_link {
+    display: block;
+    margin-left: $margin_y;
+    @include category_link_text;
+}
+
+#list .category .publicTrans_icon
+{
+    position: relative;
+    font-size: 23px;
+    height: 30px;
+    width: 30px;
+    @include border_radius(30px);
+    background-color: $light_grey;
+    text-align: center;
+    color: $white;
+    vertical-align: middle;
+    display: table-cell;
+    //top: $margin_x;
+
+}
+
+
+#list .category a.org_ico_link {
+  padding: $margin_y 0;
+  width: 100%;
+  position: relative;
+  float: left;
+}
+
+#list .category .org_icon {
+  float: left;
+  margin: $margin_y 0 0 $margin_x;
+}
+
+#list .category .org_ico_link .text {
+    float: left;
+    margin: $margin_y 0 0 $margin_x;
+    font-size: $text_tinier;
+    font-weight: bold;
+    color: #AAAAAA;
+}
+
+#list .category .phone_link {
+    display: block;
+    margin-top: $margin_y * 1.5;
+    margin-left: $margin_x;
+    font-size: $text_big;
+    font-weight: bold;
+}
+
+#list .category .fax_number {
+    margin-right: 0;
+    margin-bottom: $margin_y;
+}
+
+#list .category .number_label {
+    margin-top: 0 - $text_tiny;
+    @include label_text;
+    text-transform: uppercase;
+}
+
+/* DETAILS GOES HERE. */
+
+#list .category .header,
+#list .category .streetname,
+#list .category .postarea,
+#list .category .distance {
+    display: block;
+    margin-left: $margin_x;
+    float: left;
+    position: relative;
+    clear: left;
+}
+#list .category .header {
+    font-size: $text_huger;
+    margin-top: 5px;
+}
+
+#list .category p {
+    line-height: 1.3;
+    //padding-left: $margin_x;
+}
+#list .category .streetname,
+#list .category .postarea {
+  font-size: $text_smaller;
+}
+
+#list .category .distance {
+  font-size: $text_tiny;
+  font-weight: bold;
+}
+
+#list .category .logo_container {
+    min-height: $details_logo_height;
+    margin-bottom: $margin_y;
+    margin-right: $margin_x;
+    float: right;
+}
+
+#list .category .logo_container img {
+    max-width: $details_logo_width;
+    max-height: $details_logo_height;
+}
+
+.email_button {
+    @include button_email;
+}
+
+.homepage_button {
+    @include button_homepage;
+}
+
+.linkedin_button {
+    @include button_linkedin;
+}
+
+.facebook_button {
+    @include button_facebook;
+}
+
+.twitter_button {
+    @include button_twitter;
+}
+
+.skype_button {
+    @include button_skype;
+}
+
+.call_button {
+    @include button_call;
+}
+
+.sms_button {
+    @include button_sms;
+}
+
+.deeplink_button {
+    top: 5px;
+    @include button_deeplink;
+}
+
+#list .map_links {
+    font-size: 13px; /* NOTE: special case to fit the text. */
+    font-weight: bold;
+    min-height: 60px;
+    border-top: 1px solid $lighter_grey;
+}
+
+#list .category .route_link {
+    position: relative;
+    float: right;
+    margin-right: $margin_y;
+    min-width: 90px;
+}
+
+#list .category .route_link .icon {
+    position: relative;
+    float: left;
+    margin: $margin_y $margin_x;
+    @include route_icon;
+}
+
+
+#list .category .route_link .text {
+    position: relative;
+    float: left;
+    margin: ($margin_y * 2) 0;
+    font-size: $text_smaller;
+    font-weight: bold;
+}
+
+#list .category .map_link {
+    position: relative;
+    float: left;
+    margin-left: $margin_x;
+    min-width: 90px;
+}
+
+#list .category .map_link .icon {
+    position: relative;
+    margin: $margin_y 0;
+    float: left;
+    @include map_icon;
+}
+
+#list .category .map_link .text {
+    position: relative;
+    margin: ($margin_y * 2) 0;
+    float: left;
+    font-size: $text_smaller;
+    font-weight: bold;
+}
+
+#list .opening_hours div.ot_wrapper {
+  margin: $margin_x;
+}
+
+#list .opening_hours div.ot_wrapper>div {
+  clear: both;
+}
+
+#list .opening_hours .day {
+  float: left;
+}
+
+#list .opening_hours .time {
+    float: right;
+    margin-right: $margin_x;
+}
+
+#list .opening_hours .dayline {
+  clear: both;
+  width: 100%;
+  float: left;
+}
+
+#list .opening_hours .dayline.last {
+  margin-bottom: $margin_y / 2;
+}
+
+#list .opening_hours .today {
+    font-weight: bold;
+}
+#list .category.reviews {
+    border-bottom: none;
+}
+#list .reviews>.review_header {
+    font-weight: bold;
+    font-size: $text_huge;
+    padding: $margin_y 0;
+    float: left;
+    width: 100%;
+    position: relative;
+    border-bottom: 1px solid $lighter_grey;
+}
+
+#list .reviews>.review_header>.review_icon {
+    @include review_provider;
+    float: left;
+    position: relative;
+    margin-left: 10px;
+}
+
+#list .reviews>.header>.stars {
+    float: right;
+    position: relative;;
+    margin-right: $margin_x;
+    margin-top: $margin_y;
+}
+
+#list .reviews>.review {
+    border-bottom: 1px solid $lighter_grey;
+    padding: $margin_y 0 $margin_y $margin_x;
+}
+
+#list .reviews>.review>.summary {
+    font-weight: bold;
+    display: inline-block;
+    margin-top: $margin_y;
+}
+
+#list .reviews>.review>.stars {
+    float: right;
+    margin-top: $margin_y;
+}
+
+#list .reviews>.review>div>.alias,
+#list .reviews>.review>div>.date {
+    display: inline-block;
+    font-size: $text_small;
+}
+
+#list .reviews>.review>.text {
+    margin-top: 10px;
+}
+
+#list .reviews>.review>.response {
+    margin: 10px 0 0 10px;
+    font-style: italic;
+    color: $light_grey;
+}
+
+/* DETAILS ENDS HERE. */
+
+#list>li.result {
+    position: relative;
+    border-bottom: 1px solid $lighter_grey;
+    font-size: $text_small;
+    width: 100%;
+    float: left;
+}
+
+#list>li.result>a.details_link,
+#list>li.result>a.details_link_no_phone {
+    display: block;
+    margin: 0 $margin_x;
+    padding: $margin_y 0 ($margin_y * 2);
+}
+
+#list>li.result>div.stars {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    bottom: $margin_y;
+}
+
+#list>li.result .logo {
+    position: relative;
+    width: 60px;
+    min-height: 60px;
+    float: left;
+    padding: ($margin_y / 2) 0 $margin_y;
+}
+
+#list>li.result .logo>img {
+    display: block;
+    max-width: 60px;
+    max-height: 60px;
+}
+
+#list>li.result .main_logo {
+    margin-left: 60px + $margin_x;
+}
+
+#list>li.result p.bold {
+    font-weight: bold;
+}
+
+#list>li.result .details_link .main_logo,
+#list>li.result .details_link .main_no_logo {
+    margin-right: 65px + $margin_x;
+}
+
+#list>li.result .button {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: -34px; /* Height of icon */
+}
+
+#list>li.result .vip,
+#list>li.result .gold,
+#list>li.result .silver {
+    position: absolute;
+    right: 0;
+    top: -$margin_y;
+    bottom: 0;
+    width: 5px;
+}
+
+#list>li.result .vip{
+    @include vip;
+}
+#list>li.result .gold {
+    @include gold;
+}
+
+#list>li.result .silver {
+    @include silver;
+}
+
+#list>li.result div.distance {
+    @include label_text;
+    float: left;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+#list>li.result div.location_data {
+    display: none;
+}
+
+#list>li.location>a.has_map {
+    display: block;
+    padding: 10px 0;
+    position: relative;
+    float: left;
+    max-width: 80%;
+}
+
+#list>li.location>a.route {
+    display: block;
+    position: relative;
+    display: block;
+    padding: 10px 0;
+    float: right;
+    margin-right: 10px;
+}
+
+#list>li.location>a.route>.image {
+    @include route_icon;
+    margin: 0 auto;
+}
+
+#list>li.location>a.route>.text {
+    @include label_text;
+    text-transform: uppercase;
+}
+
+#list a.route_loc p {
+  padding: $margin_y 0;
+}
+
+#list>li.result.location p {
+    margin-left: $margin_x;
+}
+
+#refresher {
+    position: relative;
+    padding: $margin_y 0;
+    height: 50px;
+    float: left;
+    width: 100%;
+}
+
+#refresher>.spinner {
+    position: relative;
+    float: right;
+    margin-right: $margin_x;
+    width: 46px;
+    height: 46px;
+}
+
+#refresher>.spinner>div {
+    top: 17px;
+    left: 21px;
+    width: 4px;
+    height: 12px;
+    background-color: black;
+}
+
+#refresher>.text {
+    font-size: $text_normal;
+    margin-left: $margin_x;
+    float: left;
+}
+
+#list {
+    position: relative;
+    clear: left;
+}
+
+#list>li.summary {
+    color: $medium_grey;
+    background-color: $lighter_grey;
+    padding: 7px $margin_x;
+    min-height: 37px;
+    font-size: $text_small;
+}
+
+#list>li.summary>.search_text {
+    display: inline-block;
+    position: relative;
+    font-size: $text_smaller;
+    top: 1px;
+    font-weight: normal;
+    margin-right: 115px; /* Width of "More choices"-icon + right margin */
+}
+
+#list>li.summary>.search_word {
+    position: relative;
+    margin-top: 5px;
+    font-weight: bold;
+    max-width: 70%;
+    font-size: $text_smaller;
+}
+
+#list>li.summary>a>.icon {
+    @include more_choices;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+
+#list>.category>.free_text_content {
+    margin: $margin_y $margin_x;
+}
+
+#list .free_text_header {
+    font-weight: bold;
+}
+
+#list .free_text_content>a {
+    text-decoration: underline;
+}
+
+$details_rating_width: 100px;
+
+#menu>.details {
+    position: absolute;
+    top: 14px;
+    left: 50%;
+    width: $details_rating_width;
+    margin-left: 0 - ($details_rating_width / 2);
+}
+
+#list .category .person_header_text {
+    margin-bottom: 0;
+}
+
+#list .person_header {
+    border-bottom: none;
+    min-height: 0;
+}
+
+#list .person_details_address {
+    min-height: 0;
+    padding-bottom: $margin_y;
+    background-color: $white;
+    padding-top: $margin_y / 2;
+}
+
+#list .person_details_address .street,
+#list .person_details_address .post {
+  display: block;
+  float: left;
+  clear: both;
+  position: relative;
+  margin-left: $margin_x;
+}
+
+#list .address_separator {
+    padding: 5px $margin_x;
+    color: $lighter_grey;
+    background-color: $dark_grey;
+    position: relative;
+    float: left;
+    width: 100%;
+}
+
+#list .address_multiple .category:last-child {
+    border-bottom: none;
+}
+
+#list>.no_hits {
+    padding: $margin_y $margin_x;
+}
+
+/* SLIDESHOW */
+
+#list .slideshow_container {
+    position: relative;
+    text-align: center;
+    padding: 10px;
+    background-color: #ffffff;
+}
+
+#list .slideshow_container img,
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#list .slideshow_container img.foreground {
+    z-index: 1;
+}
+
+#list .slideshow_container img.background {
+    z-index: 0;
+}
+
+#list .slideshow .prev,
+#list .slideshow .next
+{
+    display: block;
+    padding: 5px;
+    font-weight: bold;
+    font-size: 22px;
+    height: 23px;
+    width: 23px;
+}
+
+#list .slideshow .prev {
+    float: left;
+    margin-left: $margin_x;
+    @include previous_button;
+
+}
+
+#list .slideshow .next {
+    float: right;
+    margin-right: $margin_x;
+    @include next_button;
+}
+
+#list .slideshow .indicator {
+    height: 30px;
+    margin: 10px 40px;
+    text-align: center;
+}
+
+#list .slideshow .indicator>div {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    @include border_radius(20px);
+    background-color: #cccccc;
+    margin: 5px;
+}
+
+#list .slideshow .indicator>div.selected {
+    background-color: #666666;
+}
+
+#list div a.ojoj{
+  display: block;
+  min-height: 30px;
+  padding: 10px 10px;
+}
+
+#full_site_detail {
+  z-index: 4;
+  width: 100%;
+  height: 36px;
+  text-align: center;
+  margin-top: $margin_y_jump_to_online;
+  padding-bottom: ($margin_y_jump_to_online / 2);
+  display: none;
+}
+
+#full_site_detail a {
+  display: block;
+  color: $lighter_grey;
+  font-size: $text_small;
+  font-weight: bold;
+  height: 100%;
+  padding-top: $margin_y_jump_to_online;
+}
+
+#list .person_title {
+  margin-left: $margin_x;
+  padding-bottom: $margin_y;
+}
+
+#list .person_address_multiple,
+#list .details_header {
+  position: relative;
+  float:left;
+  width: 100%;
+}
+
+#list .details_header {
+  padding-bottom: $margin_y;
+}

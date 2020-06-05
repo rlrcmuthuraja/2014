@@ -1,0 +1,39 @@
+@import 'imports';
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: $text_normal;
+    font-weight: normal;
+    color: $text_dark;
+}
+
+a {
+    color: $text_dark;
+    text-decoration: none;
+}
+
+#noscript{
+    display: block;
+    position: absolute;
+    color: #CCC;
+    z-index: 1;
+    top: 200px;
+    left: 10px;
+    right: 10px;
+}
+#noscript h1{
+    font-size: $text_big;
+    line-height: 1.5;
+}
+#noscript p{
+    font-size: $text_normal;
+}
+#noscript a{
+    color:#fff;
+}

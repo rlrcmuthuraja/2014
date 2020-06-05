@@ -1,0 +1,70 @@
+@import 'imports';
+
+
+$page_loader_search_width: 180px;
+
+#page_loader.search {
+    position: absolute;
+    top: 210px;
+    left: 50%;
+    margin-left: 0 - ($page_loader_search_width/2);
+    width: $page_loader_search_width;
+    height: 240px;
+}
+
+#page_loader.search .spinner {
+    position: relative;
+    top: 0;
+    left: 50%;
+    margin-left: -50px;
+    width: 100px;
+    height: 100px;
+}
+
+#page_loader.search .spinner div {
+    top: 37px;
+    left: 48px;
+    width: 2px;
+    height: 12px;
+    background-color: white;
+}
+
+#page_loader.search .status {
+    position: relative;
+    margin-top: 2px;
+    text-align: center;
+}
+
+$page_loader_content_width: 180px;
+
+#page_loader.content {
+    position: absolute;
+    top: 180px;
+    left: 50%;
+    margin-left: 0 - ($page_loader_content_width/2);
+    width: $page_loader_content_width;
+    height: 240px;
+}
+
+#page_loader.content .spinner {
+    position: relative;
+    top: 0;
+    left: 50%;
+    margin-left: -50px;
+    width: 100px;
+    height: 100px;
+}
+
+#page_loader.content .spinner div {
+    top: 37px;
+    left: 48px;
+    width: 2px;
+    height: 12px;
+    background-color: black;
+}
+
+#page_loader.content .status {
+    position: relative;
+    margin-top: 2px;
+    text-align: center;
+}

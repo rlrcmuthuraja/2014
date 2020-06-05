@@ -1,0 +1,953 @@
+@import 'imports';
+
+#list>li.route_instruction {
+    border-bottom: 1px solid $lighter_grey;
+    padding: 0;
+    position: relative;
+    float: left;
+    width: 100%;
+}
+
+#list>li.route_instruction .route_instr_no {
+    font-weight: bold;
+    position: relative;
+    float: left;
+    clear: none;
+    margin-left: $margin_x;
+}
+
+#list>li.route_instruction .route_instr_text {
+    display: inline-block;
+    position: relative;
+    float: left;
+    margin-left: $margin_x;
+    max-width: 89%;
+}
+
+#list>li.route_instruction>a {
+    display: block;
+    position: relative;
+    float: left;
+    clear: right;
+    width: 100%;
+    padding: $margin_y 0;
+}
+
+#route_result {
+    color: $lighter_grey;
+}
+
+#route_result>.location {
+    display: block;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid $light_grey;
+    width: 100%;
+    position: relative;
+    float: left;
+    background-color: #555555;
+}
+
+#route_result>.location>.swap {
+    position: relative;
+    float: right;
+    margin-right: 25px;
+    margin-top: -70px;
+    z-index: 3;
+}
+
+#route_result>.info {
+    padding: 0 $margin_x;
+    height: $menu_height;
+}
+
+#route_result>.info>.left {
+    float: left;
+    position: relative;
+    top: 7px;
+}
+
+.route_back {
+    position: relative;
+    display: inline-block;
+    padding: 5px 7px 7px 9px;
+    margin-right: 5px;
+    @include border_radius(30px);
+    background-color: #333;
+}
+
+.route_back>.arrow {
+    position: relative;
+    display: inline-block;
+    top: 2px;
+    margin-right: 4px;
+    @include back_icon;
+}
+
+#route_result>.info>.left>.time_symbol {
+    position: relative;
+    top: 4px;
+    display: inline-block;
+    @include time_icon;
+}
+
+#route_result>.info>.left>.time {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+}
+
+#route_result>.info>.right {
+    position: relative;
+    top: 11px;
+    float: right;
+}
+#menu>.nearby_stations_info {
+    margin-right: $margin_x;
+    position: relative;
+    top: 11px;
+    float: right;
+    color : $lighter_grey;
+}
+
+#route_result>.info>.right {
+    position: relative;
+    top: 11px;
+    float: right;
+}
+
+
+#route_result>.info>.right>.from,
+#route_result>.info>.right>.to
+{
+    display: inline-block;
+    position: relative;
+    top: 2px;
+}
+
+#route_result>.info>.right>.from
+{
+    @include route_from_icon;
+}
+
+#route_result>.info>.right>.distance {
+    display: inline-block;
+}
+
+#route_result>.info>.right>.to {
+    display: inline-block;
+    @include route_to_icon;
+}
+
+#route_result>.info>.right>.more {
+    padding: 6px 10px;
+    background-color: $dark_grey;
+    color: $highlight_colour1;
+    @include border_radius(30px);
+}
+
+#route_result>.advanced {
+    border-top: 1px solid $light_grey;
+}
+
+#route_result .pref {
+    position: relative;
+    height: $menu_height;
+    border-bottom: 1px solid $light_grey;
+    font-weight: bold;
+}
+
+#route_result .pref>a {
+    position: absolute;
+    margin-top: 7px;
+    padding: 8px 15px;
+    color: $menu_color_text;
+    background-color: #333;
+}
+
+#route_result .pref .fastest {
+    left: 10px;
+    right: 50.5%;
+    -moz-border-radius-bottomleft: 30px;
+    -moz-border-radius-topleft: 30px;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+
+#route_result .pref .shortest {
+    right: 10px;
+    left: 50.5%;
+    -moz-border-radius-bottomright: 30px;
+    -moz-border-radius-topright: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+#route_result .pref>.selected {
+    color: #ccc;
+    background-color: #222;
+    font-weight: normal;
+}
+
+#route_result .pref>a>span {
+    display: none;
+}
+
+#route_result .pref>a.selected>span {
+    display: inline;
+}
+
+
+#route_result>.advanced>.avoid {
+    padding: 13px $margin_x;
+}
+
+#route_result .field_container {
+    position: relative;
+    margin: 0;
+}
+
+/** ROUTE SELECTION Car / Public transport **/
+#route_result .route_tabs {
+    position: relative;
+    float: left;
+    width: 100%;
+    background-color: $medium_grey;
+    display: none;
+}
+
+#route_result .route_tabs div a {
+  color: $yellow;
+}
+#route_result .route_tabs div.tab_button {
+    font-size: $text_normal;
+    display: block;
+    text-align: center;
+    background-color: $dark_grey;
+    padding: ($margin_y / 2) 0;
+}
+
+#route_result .route_tabs div input,
+#route_result .route_tabs div select {
+  display: none;
+  float: left;
+}
+
+#route_result .route_tabs div.public .extra {
+  display: inline-block;
+  top: 2px;
+}
+
+#route_result .route_tabs div.public input {
+  width: 100px;
+}
+
+#car_trans_label.public {
+  width: 20%!important;
+}
+
+#pub_trans_label.public {
+  width: 80%!important;
+}
+
+#route_result .route_tabs div.tab_button_wrapper {
+  width: 50%;
+  position: relative;
+  float: left;
+  margin: ($margin_y / 2) 0;
+}
+
+#route_result .route_tabs div.tab_button_wrapper:first-child div.tab_button {
+  -moz-border-radius-topleft: 20px;
+  -moz-border-radius-bottomleft: 20px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  margin-left: $margin_x;
+  margin-right: 2px;
+}
+#route_result .route_tabs div.tab_button_wrapper:last-child div {
+  -moz-border-radius-topright: 20px;
+  -moz-border-radius-bottomright: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  margin-right: $margin_x;
+  margin-left: 2px;
+}
+#route_result .route_tabs div.active a {
+  color: $lighter_grey;
+}
+#route_result .route_tabs div.active div.tab_button {
+    background-color: $darker_grey;
+}
+
+#menu>.route_select {
+    padding: 14px 110px;
+    color: $lighter_grey;
+}
+
+#route_navigation {
+    position:absolute;
+    bottom: 0;
+    z-index: 10;
+    width: 100%;
+
+}
+
+#route_navigation .toggle {
+    display:block;
+    width: $toggle_width;
+    height: $toggle_height;
+    left:50%;
+    margin-left: 0 - ($toggle_width / 2);
+    position: relative;
+    @include toggle_down;
+
+}
+
+#route_navigation .container{
+
+    position:relative;
+    min-height: 50px;
+    background-color: white;
+    border-top: 1px solid $lighter_grey;
+
+}
+
+#route_navigation .container .left,
+#route_navigation .container .right {
+    display:block;
+    position: absolute;
+    width: $navigation_width;
+    top : 50%;
+    margin-top: 0 - ($button_img_height/2);
+    width: $button_img_width;
+    height:$button_img_height;
+}
+
+#route_navigation .container .left {
+    left : $margin_x;
+    @include previous_button;
+}
+
+#route_navigation .container .right {
+    right : $margin_x;
+    @include next_button;
+}
+
+#route_navigation .container .middle {
+    padding: $margin_y;
+    margin: 0 ($margin_x*2)+$button_img_width;
+}
+
+#list li.pub_trip {
+    width: 100%;
+    display: none;
+}
+
+#list li.pub_trip a.toggle_public_route {
+    position: relative;
+    float: left;
+    width: 100%;
+    display: block;
+    border-top: 1px solid #000000;
+    border-bottom: 1px solid #000000;
+}
+
+#list li.pub_trip div.trip_no_wrapper {
+  background-color: $lighter_grey;
+  width: $pub_route_trip_no_width;
+  padding: ($margin_y * 2) 0;
+  float: left;
+}
+
+#list li.pub_trip span.trip_no {
+    font-size: $text_huge;
+    font-weight: bold;
+    margin-left: $margin_x;
+}
+
+#list li.pub_trip div.trip_text {
+    position: relative;
+    float: left;
+    clear: right;
+    width: (100% - $pub_route_trip_no_width);
+    height: 62px;
+}
+
+#list li.pub_trip div.trip_text span {
+    position: relative;
+}
+
+#list li.pub_trip div.trip_text span.total_duration {
+    float: left;
+    margin: $margin_y 0 0 $margin_x;
+}
+
+#list li.pub_trip div.trip_text span.trans_icon {
+  font-size: $text_big;
+}
+#list li.pub_trip div.trip_text span.trans_trans_no {
+    font-size: $text_tinier;
+    margin-left: 1px;
+    margin-right: 3px;
+}
+
+#list li.pub_trip div.trip_text span.trip_times {
+    float: right;
+    clear: right;
+    margin: $margin_y $margin_x 0 0;
+    font-size: $text_small;
+}
+
+#list li.station_departures div.icon {
+    float: right;
+    clear: right;
+    margin: $margin_y $margin_x 0 0;
+    font-size: $text_small;
+}
+
+#list li.pub_trip div.trip_text div.trip_icons {
+    position: absolute;
+    clear: left;
+    left: $margin_x;
+    right: $margin_x;
+    bottom: $margin_y;
+    color: $light_grey;
+    overflow: scroll;
+}
+
+#list li.pub_trip div.trip_text div.trip_icons::-webkit-scrollbar {
+    display: none;
+}
+
+#list li.pub_trip ul.trip_details_list {
+  display: none;
+  width: 100%;
+  position: relative;
+  float: left;
+}
+
+#list li.pub_trip ul.trip_details_list li {
+  padding: $margin_y 0;
+  position: relative;
+  float: left;
+  width: 100%;
+  border-bottom: 1px solid #000000;
+}
+
+#list li.pub_trip ul.trip_details_list li.pub_trans_route_details {
+  min-height: $margin_y * 3;
+}
+
+#list li.pub_trip ul.trip_details_list li.pub_trans_route_details span.icon {
+    left: ($margin_x - 2);
+    position: absolute;
+    border-width: 2px;
+    border-style: solid;
+    @include border_radius(30px);
+    border-color: $lighter_grey;
+    padding: 4px;
+    z-index: 2;
+    background-color: $highlight_colour;
+    font-size: $text_huge;
+}
+
+#list li.pub_trip ul.trip_details_list li.pub_trans_route_details div.line {
+  width: 2px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background-color: $lighter_grey;
+  left: 24px;
+}
+
+#list li.pub_trip ul.trip_details_list li.pub_trans_route_details div.route_details_text {
+  position: relative;
+  float: left;
+  line-height: 1.3;
+  width: 100%;
+}
+
+div.route_details_text div.row {
+    position: relative;
+    float: left;
+    clear: left;
+    width: 100%;
+}
+
+div.route_details_text div.row span:first-child {
+    position: relative;
+    float: left;
+    clear: left;
+    margin-left: 46px;
+    margin-right: $margin_x / 2;
+}
+
+div.leg_from,
+div.leg_to {
+    line-height: 1.5;
+    font-size: $text_tiny;
+}
+
+div.leg_from span.label,
+div.leg_to span.label {
+    width: 40px;
+    position: relative;
+    float: left;
+}
+
+div.leg_from span.leg_trans_time,
+div.leg_to span.leg_trans_time {
+    position: relative;
+    float: right;
+    margin-right: 34px;
+}
+
+div.route_details_text div.direction {
+    margin-top: $margin_y;
+}
+
+div.route_details_text div.direction span{
+  font-weight: bold;
+  font-size: $text_small;
+}
+div.route_details_text div.row span.leg_trans_no {
+    background-color: #000000;
+    color: $text_white;
+    padding: 0 3px;
+}
+
+div.route_details_text span.leg_trans_descr {
+    margin-left: 46px;
+    font-weight: bold;
+    font-size: $text_small;
+    position: relative;
+    float: left;
+    margin-top: 7px;
+    max-width: 57%;
+}
+
+div.route_details_text span.link_icon {
+    position: absolute;
+    float: none;
+    right: $margin_x;
+}
+
+div.route_details_text span.walkduration {
+    position: relative;
+    float: right;
+    margin-right: 34px;
+    font-size: $text_tiny;
+    margin-top: 7px;
+    font-weight: bold;
+}
+
+div.route_details_text span.transduration {
+    position: relative;
+    float: right;
+    margin-right: 34px;
+    font-size: $text_tiny;
+    font-weight: bold;
+}
+
+#list li.pub_trip ul.trip_details_list li.pub_trans_route_details div.route_details_text span.link_icon {
+    top: $margin_y * 2;
+    color: $yellow;
+    font-size: $text_huge;
+}
+
+#list div.route_details_text span.leg_realtime {
+    position: absolute;
+    top: $margin_y;
+    right: $margin_x;
+}
+
+#list li.pub_trip ul.trip_details_list li.start_item,
+#list li.pub_trip ul.trip_details_list li.end_item {
+    background-color: #000000;
+    padding: ($margin_y / 2) 0;;
+}
+
+#list li.pub_trip ul.trip_details_list li.start_item span.icon,
+#list li.pub_trip ul.trip_details_list li.end_item span.icon {
+    margin-left: $margin_x * 2;
+    position: relative;
+    float: left;
+    border-width: 0;
+    border-style: solid;
+    @include border_radius(15px);
+    border-color: $lighter_grey;
+    padding: 2px 3px;
+    z-index: 2;
+    background-color: $lighter_grey;
+    color: $text_grey;
+    font-size: $text_tinier;
+}
+
+#list li.pub_trip ul.trip_details_list li.start_item span.text,
+#list li.pub_trip ul.trip_details_list li.end_item span.text {
+    position: relative;
+    margin-left: $margin_x * 2;
+    font-size: $text_small;
+    color: $lighter_grey;
+}
+
+#list li.pub_trip ul.trip_details_list li.start_item div.line,
+#list li.pub_trip ul.trip_details_list li.end_item  div.line {
+    width: 2px;
+    position: absolute;
+    background-color: $lighter_grey;
+    left: 26px;
+}
+
+
+#list li.pub_trip ul.trip_details_list li.start_item div.line {
+    top: $margin_y;
+    bottom: -2px;
+}
+
+#list li.pub_trip ul.trip_details_list li.end_item  div.line {
+    top: -1px;
+    height: $margin_y;
+}
+
+#list li.station_departures {
+    position: relative;
+    width: 100%;
+    padding: $margin_y 0;
+    float: left;
+    border-bottom: 1px solid #999999;
+    background-color: $highlight_colour;
+}
+
+#list li.station_departures span.route_no {
+    position: relative;
+    float: left;
+    margin-left: $margin_x;
+    padding: 4px;
+    background-color: #000000;
+    color: $text_white;
+    font-weight: bold;
+    font-size: $text_huge;
+    min-width: 32px;
+    text-align: center;
+}
+
+#list li.station_departures div.text {
+    position: relative;
+    float: left;
+    margin-left: $margin_x;
+}
+
+#list li.station_departures div.text span {
+    position: relative;
+    float: left;
+    clear: left;
+}
+
+#list li.station_departures div.realtime_wrapper {
+    position: relative;
+    float: right;
+    margin-right: $margin_x;
+    border-top: 1px solid $lighter_grey;
+    border-bottom: 1px solid $lighter_grey;
+}
+
+#list li.station_departures span.realtime {
+    position: relative;
+    float: left;
+}
+
+#list li.station_departures span.minute_notation {
+    position: relative;
+    float: left;
+    margin: 2px 0 0 2px;
+    text-transform: uppercase;
+    font-size: $text_small;
+}
+
+#pub_route_advanced {
+    width: 100%;
+    position: relative;
+    float: left;
+    background-color: $medium_grey;
+    display: none;
+}
+
+#pub_route_advanced .cell {
+    position: relative;
+    float: left;
+    width: 25%;
+    padding: 1px 0;
+}
+
+#pub_route_advanced .cell a.avoid_button {
+    position: relative;
+    float: left;
+    margin: 0 auto;
+    background-color: $highlight_colour;
+    width: 99%;
+    color: $dark_grey;
+    display: block;
+}
+
+#pub_route_advanced .cell a.avoid_button.selected {
+    background-color: $light_grey
+}
+
+#pub_route_advanced .cell .icon {
+    position: relative;
+    float: left;
+    padding: $margin_y 0 2px;
+    width: 100%;
+    font-size: $text_huge;
+    text-align: center;
+}
+
+#pub_route_advanced .cell .text {
+    position: relative;
+    float: left;
+    clear: left;
+    padding: 0 0 $margin_y;
+    width: 100%;
+    font-size: $text_smaller;
+    text-align: center;
+}
+
+#pub_route_advanced .confirm_button {
+  width: 100%;
+  position: relative;
+  float: left;
+  padding: $margin_y 0;
+}
+
+#pub_route_advanced .confirm_button span {
+  text-align: center;
+  position: relative;
+  float: left;
+  background-color: $dark_grey;
+  @include border_radius(15px);
+  border-color: $dark_grey;
+  color: $yellow;
+  padding: ($margin_y / 2) 0;
+  width: 50%;
+  margin: 0 25%;
+}
+
+#route_result .pub_route_info {
+  display: block;
+  width: 100%;
+  position: relative;
+  float: left;
+  padding: $margin_y 0;
+  display: none;
+}
+
+#route_result .pub_route_info .left {
+  position: relative;
+  float: left;
+  margin-left:  $margin_x;
+}
+#route_result .pub_route_info .right {
+  position: relative;
+  float: right;
+  margin-right:  $margin_x;
+}
+
+#route_result .pub_route_info .text {
+  position: relative;
+  float: left;
+  padding: 4px;
+}
+#route_result .pub_route_info .icon {
+  color: $yellow;
+  font-size: $text_huge;
+  position: relative;
+  float: left;
+}
+
+#route_result .pub_route_info .pub_route_back,
+#route_result .pub_route_info .pub_route_setting {
+  background-color: $dark_grey;
+  position: relative;
+  float: left;
+  padding: 0 2px;
+  @include border_radius(15px);
+  border-color: $lighter_grey;
+  color: $yellow;
+}
+
+#route_result .pub_route_info .info_text {
+  color: $white;
+  font-size: 16px;
+  float: left;
+  position: relative;
+  margin: 4px 0 auto 10px;
+}
+
+#pub_route_travel {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  background-color: $darker_grey;
+  opacity: 0.9;
+  display: none;
+}
+
+#pub_route_travel form {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#pub_route_travel .ok {
+  position: relative;
+  height: 40%;
+  width: 100%;
+  margin: 0 auto;
+  font-size: 200px;
+  display: block;
+  text-align: center;
+  color: $highlight_colour;
+}
+
+#pub_route_travel .pub_date {
+  position: relative;
+  width: 90%;
+  height: 20px;
+}
+
+#travel_time {
+  display: none;
+}
+
+#travel_type_container,
+#travel_time_container,
+#pub_trans_label span.arrow {
+  display: none;
+  color: $yellow;
+}
+
+#route_result div.public div.inline {
+  display: inline-block;
+}
+#pub_trans_label div.right {
+  float: right;
+}
+
+#list span.alternate {
+    margin-left: $margin_y;
+    display: inline-block;
+
+}
+
+#list li.station_departures_alternate {
+    position: relative;
+    width: 100%;
+    padding: $margin_y 0;
+    float: left;
+    background-color: $white;
+    moz-box-shadow: 1px 1px 15px 1px #777;
+    -webkit-box-shadow: 1px 1px 15px 1px #777;
+    box-shadow: 1px 1px 15px 1px #777;
+    z-index: 1;
+
+}
+
+div.route_details_text span.link_icon {
+    color: $yellow;
+}
+
+div.route_details_text span.alternate {
+    margin-right:20px;
+}
+
+#list li.station_departures_alternate .depLocation{
+    position: relative;
+    max-width: 95%;
+    float: left;
+    margin: 10px 0px 0px 10px;
+    min-width: 95%;
+}
+
+#route_result ul.route_autosuggest::-webkit-scrollbar {
+  display: none;
+}
+
+#route_result ul.route_autosuggest {
+    display: none;
+    background-color: $dark_grey;
+    position: absolute;
+    top: 33px;
+    left: $margin_y;
+    right: $margin_y;
+    z-index: 2;
+    overflow: scroll;
+    height: 90px;
+}
+
+#route_result ul.route_autosuggest li.sug {
+  float: left;
+  clear: right;
+  width: 100%;
+}
+
+#route_result ul.route_autosuggest li.sug a.suggestion {
+  display: block;
+  width: 100%;
+  float: left;
+  color: $white;
+  padding: $margin_y 0;
+  font-size: $text_normal;
+}
+
+#route_result ul.route_autosuggest li.sug a.suggestion span {
+  position: relative;
+  float: left;
+  margin-left: $margin_x;
+}
+
+#list li.nearby_station {
+    width: 100%;
+    position: relative;
+    float: left;
+}
+
+#list li.nearby_station a.station_link {
+    width: 100%;
+    padding: $margin_y 0;
+    float: left;
+}
+
+#list li.nearby_station span.left {
+    position: relative;
+    float: left;
+    margin-left: $margin_x;
+}
+
+#list li.nearby_station span.icon {
+    font-size: $text_huge;
+}
+
+#list li.nearby_station span.text {
+    margin: $margin_x;
+    font-size: $text_small;
+}
+
+#list li.nearby_station div.right {
+    position: relative;
+    float: right;
+    margin-right: $margin_x;
+}
+
+#list li.nearby_station div.right span.text {
+    font-size: $text_tinier;
+}
+#list li.nearby_station div.right span.icon {
+    color: $yellow;
+}

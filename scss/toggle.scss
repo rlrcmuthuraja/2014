@@ -1,0 +1,34 @@
+@import 'imports';
+
+#toggle {
+    position: absolute;
+    width: $toggle_wrapper_width;
+    height: $toggle_wrapper_height;
+    margin-left: 0 - $toggle_wrapper_width / 2;
+    left: 50%;
+}
+
+#toggle > div.icon {
+    bottom: 0;
+    position: absolute;
+    width: $toggle_width;
+    height: $toggle_height;
+    margin-left: 0 - $toggle_width / 2;
+    left: 50%;
+}
+
+#toggle.up {
+    top: $header_height - $toggle_wrapper_height;
+}
+
+#toggle.down {
+    bottom: 0;
+}
+
+#toggle.up div.icon {
+    @include toggle_up;
+}
+
+#toggle.down div.icon {
+    @include toggle_down;
+}

@@ -1,0 +1,9 @@
+@import 'imports';
+
+#menu {
+    position: relative;
+    min-height: $menu_height;
+    font-size: $text_smaller;
+    background-color: $medium_grey;
+}
+

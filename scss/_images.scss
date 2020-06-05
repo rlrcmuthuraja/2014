@@ -1,0 +1,412 @@
+@import 'positions';
+@import 'locale';
+
+
+@mixin previous_button{
+    @include sprite;
+    background-position: -395px -200px;
+
+}
+
+@mixin next_button{
+    @include sprite;
+    background-position: -429px -200px;
+
+}
+
+@mixin searchbar_button {
+    @include sprite;
+    background-position: -367px -57px;
+    width: 69px;
+    height: 69px;
+}
+
+@mixin toggle_up {
+    @include sprite;
+    background-position: 0 -200px;
+}
+
+@mixin toggle_down {
+    @include sprite;
+    background-position: -41px -200px;
+}
+
+@mixin back_icon {
+    width: 9px;
+    height: 14px;
+    @include sprite;
+    background-position: -9px 0;
+}
+
+@mixin button_email {
+    @include sprite;
+    background-position: -361px 0;
+}
+
+@mixin button_homepage {
+    @include sprite;
+    background-position: -395px 0;
+}
+
+@mixin button_deeplink {
+    @include sprite;
+    background-position: -429px 0;
+}
+
+@mixin button_skype {
+    @include sprite;
+    background-position: -462px -33px;
+}
+
+@mixin button_facebook {
+    @include sprite;
+    background-position: -462px -67px;
+}
+
+@mixin button_twitter {
+    @include sprite;
+    background-position: -462px -100px;
+}
+
+@mixin button_linkedin {
+    @include sprite;
+    background-position: -462px -133px;
+}
+
+@mixin button_call {
+    @include sprite;
+    background-position: -294px 1px;
+}
+
+@mixin button_sms {
+    @include sprite;
+    background-position: -328px 1px;
+}
+
+$route_icon_width: 33px;
+@mixin route_icon {
+    width: $route_icon_width;
+    height: 33px;
+    @include sprite;
+    background-position: -226px 0;
+}
+
+$map_icon_width: 33px;
+@mixin map_icon {
+    width: $map_icon_width;
+    height: 33px;
+    @include sprite;
+    background-position: -261px 0;
+
+}
+
+$menu_tile_size: 1px 44px;
+@mixin menu_tile {
+    background-image: url("../images/2x_darkgradient.png");
+    -moz-background-size: $menu_tile_size;
+    -o-background-size: $menu_tile_size;
+    -webkit-background-size: $menu_tile_size;
+    background-size: $menu_tile_size;
+    background-repeat: repeat-x;
+}
+
+@mixin small_stars_full {
+    @include sprite;
+    background-position: -172px -245px;
+}
+
+@mixin small_stars_half {
+    @include sprite;
+    background-position: -124px -245px;
+}
+
+@mixin small_stars_empty {
+    @include sprite;
+    background-position: -149px -245px;
+}
+
+@mixin small_stars_inverted_full {
+    @include sprite;
+    background-size: 300px 300px !important;
+    background-position: -42px -144px;
+}
+
+@mixin small_stars_inverted_half {
+    @include sprite;
+    background-size: 300px 300px !important;
+    background-position: -15px -144px;
+}
+
+@mixin small_stars_inverted_empty {
+    @include sprite;
+    background-size: 300px 300px !important;
+    background-position: -59px -144px;
+}
+
+@mixin medium_stars_full {
+    @include sprite;
+    background-position: -99px -242px;
+}
+
+@mixin medium_stars_half {
+    @include sprite;
+    background-position: -50px -242px;
+}
+
+@mixin medium_stars_empty {
+    @include sprite;
+    background-position: -75px -242px;
+}
+
+@mixin big_stars_full {
+    @include sprite;
+    background-position: 0px -21px;
+}
+
+@mixin big_stars_half {
+    @include sprite;
+    background-position: -52px -21px;
+}
+
+@mixin big_stars_empty {
+    @include sprite;
+    background-position: -26px -21px;
+}
+
+@mixin vip {
+    background-image: url('../images/2xvip.png');
+}
+
+@mixin gold {
+    background-image: url('../images/2xgold.png');
+}
+
+@mixin silver {
+    background-image: url('../images/2xsilver.png');
+}
+
+@mixin time_icon {
+    @include sprite;
+    width: 17px;
+    height: 17px;
+    background-position: -208px -195px;
+}
+
+@mixin route_from_icon {
+    @include sprite;
+    width: 16px;
+    height: 17px;
+    background-position: -235px -194px;
+}
+
+@mixin route_to_icon {
+    @include sprite;
+    width: 16px;
+    height: 17px;
+    background-position: -305px -194px;
+}
+
+@mixin swap_icon {
+    @include sprite;
+    width: 20px;
+    height: 15px;
+    background-position: -337px -195px;
+}
+
+@mixin info_button {
+    @include sprite;
+    width: 34px;
+    height: 33px;
+    background-position: -269px -155px;
+}
+
+@mixin zoom_in {
+    @include sprite;
+    width: 34px;
+    height: 33px;
+    background-position: -403px -156px;
+}
+
+@mixin zoom_out {
+    @include sprite;
+    width: 34px;
+    height: 33px;
+    background-position: -369px -156px;
+}
+
+@mixin localise {
+    @include sprite;
+    width: 34px;
+    height: 33px;
+    background-position: -336px -156px;
+}
+
+@mixin show_map {
+    @include sprite;
+    width: 34px;
+    height: 33px;
+    background-position: -303px -155px;
+}
+
+@mixin company_icon {
+    @include sprite;
+    width: 22px;
+    height: 22px;
+    background-position: -295px -33px;
+}
+
+@mixin person_icon {
+    @include sprite;
+    width: 22px;
+    height: 22px;
+    background-position: -261px -33px;
+}
+
+@mixin location_icon {
+    @include sprite;
+    width: 22px;
+    height: 22px;
+    background-position: -326px -33px;
+}
+
+@mixin sort_alphabetically {
+    @include sprite;
+    width: 22px;
+    height: 22px;
+    background-position: -261px -102px;
+}
+
+@mixin sort_proximity {
+    @include sprite;
+    width: 20px;
+    height: 20px;
+    background-position: -329px -101px;
+}
+
+@mixin sort_rating {
+    @include sprite;
+    width: 22px;
+    height: 22px;
+    background-position: -295px -102px;
+}
+
+@mixin toggle_settings {
+    @include sprite;
+    width: 22px;
+    height: 22px;
+    background-position: -224px -100px;
+}
+
+@mixin expand_search {
+    @include sprite;
+    width: 18px;
+    height: 20px;
+    background-position: -162px 0px;
+}
+
+@mixin street_map {
+    @include sprite;
+    width: 70px;
+    height: 70px;
+    background-position: -102px -300px;
+}
+@mixin hybrid_map {
+    @include sprite;
+    width: 70px;
+    height: 70px;
+    background-position: -173px -300px;
+}
+@mixin aerial_map {
+    @include sprite;
+    width: 70px;
+    height: 70px;
+    background-position: -31px -300px;
+}
+@mixin nautical_map {
+    @include sprite;
+    width: 70px;
+    height: 70px;
+    background-position: -245px -300px;
+}
+
+@mixin street_map_selected {
+  @include sprite;
+  width: 70px;
+  height: 70px;
+  background-position: -102px -373px;
+}
+@mixin hybrid_map_selected {
+  @include sprite;
+  width: 70px;
+  height: 70px;
+  background-position: -173px -373px;
+}
+@mixin aerial_map_selected {
+  @include sprite;
+  width: 70px;
+  height: 70px;
+  background-position: -31px -373px;
+}
+@mixin nautical_map_selected {
+  @include sprite;
+  width: 70px;
+  height: 70px;
+  background-position: -245px -373px;
+}
+
+
+/** category icons **/
+@mixin cat_health {
+  @include sprite;
+  width: 18px;
+  height: 20px;
+  background-position: -163px -277px;
+}
+@mixin cat_accomodation {
+  @include sprite;
+  width: 18px;
+  height: 20px;
+  background-position: -7px -277px;
+}
+@mixin cat_clothing {
+  @include sprite;
+  width: 18px;
+  height: 20px;
+  background-position: -70px -277px;
+}
+@mixin cat_shopping {
+  @include sprite;
+  width: 18px;
+  height: 20px;
+  background-position: -261px -277px;
+}
+@mixin cat_food {
+  @include sprite;
+  width: 18px;
+  height: 20px;
+  background-position: -134px -277px;
+}
+@mixin cat_sport {
+  @include sprite;
+  width: 18px;
+  height: 20px;
+  background-position: -197px -277px;
+}
+@mixin cat_transport {
+  @include sprite;
+  width: 18px;
+  height: 20px;
+  background-position: -37px -277px;
+}
+@mixin cat_nightlife {
+  @include sprite;
+  width: 18px;
+  height: 20px;
+  background-position: -228px -277px;
+}
+@mixin cat_culture {
+  @include sprite;
+  width: 18px;
+  height: 20px;
+  background-position: -102px -277px;
+}

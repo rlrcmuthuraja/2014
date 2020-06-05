@@ -1,0 +1,90 @@
+@import "imports";
+
+div.stars {
+    display: inline-block;
+    position: relative;
+    float: right;
+    margin-right: $margin_y;
+}
+
+div.stars>div {
+    display: inline-block;
+}
+
+div.small_stars>div {
+    width: 15px;
+    height: 15px;
+    margin-right: 3px;
+}
+
+div.small_stars>div.full {
+    @include small_stars_full;
+}
+
+div.small_stars>div.half {
+    @include small_stars_half;
+}
+
+div.small_stars>div.empty {
+    @include small_stars_empty;
+}
+
+div.medium_stars>div {
+    width: 19px;
+    height: 19px;
+    margin-right: 3px;
+}
+
+div.medium_stars>div.full {
+    @include medium_stars_full;
+}
+
+div.medium_stars>div.half {
+    @include medium_stars_half;
+}
+
+div.medium_stars>div.empty {
+    @include medium_stars_empty;
+}
+
+div.small_stars_inverted>div {
+     width: 15px;
+     height: 15px;
+     margin-right: 3px;
+ }
+
+ div.small_stars_inverted>div.full {
+     @include small_stars_inverted_full;
+ }
+
+ div.small_stars_inverted>div.half {
+     @include small_stars_inverted_half;
+ }
+
+ div.small_stars_inverted>div.empty {
+     @include small_stars_inverted_empty;
+ }
+
+div.big_stars>div {
+    width: 25px;
+    height: 24px;
+    margin-right: 3px;
+}
+
+div.big_stars>div.full {
+    @include big_stars_full;
+}
+
+div.big_stars>div.half {
+    @include big_stars_half;
+}
+
+div.big_stars>div.empty {
+    @include big_stars_empty;
+}
+
+
+div.stars>div:last-child {
+    margin-right: 0;
+}
+

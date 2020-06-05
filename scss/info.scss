@@ -1,0 +1,39 @@
+@import 'imports';
+
+#list>.info_menu {
+    border-bottom: 1px solid $lighter_grey;
+    font-weight: bold;
+}
+
+#list>.info_menu>a {
+    display: block;
+    padding: 20px $margin_x;
+
+}
+
+#list>.info_page {
+    padding: $margin_y $margin_x;
+    font-size: $text_small;
+}
+
+#list>.info_page h3 {
+    font-size: $text_normal;
+    font-weight: bold;
+    line-height: $text_huge;
+}
+
+#list>.info_page h4 {
+    font-size: $text_small;
+    font-weight: bold;
+    line-height: $text_small;
+}
+
+#list>.info_page a {
+    text-decoration: underline;
+}
+
+#list>.info_page p {
+    margin: 0 0 0.75em 0;
+}
+
+

@@ -1,0 +1,23 @@
+@import "imports";
+
+#route_search {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+#route_search.smartbanner_active {
+    top: $smartbanner_height;
+}
+
+#route_search>.search_field_double>.field_container{
+    position: relative;
+    top: $search_double_top;
+}
+
+#route_search .swap {
+    position: absolute;
+    right: $margin_x;
+    top: 28px;
+}

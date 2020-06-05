@@ -1,0 +1,41 @@
+$text_tinier: 11px;
+$text_tiny: 12px;
+$text_smaller: 13px;
+$text_small: 14px;
+$text_normal: 16px;
+$text_big: 18px;
+$text_huge: 22px;
+$text_huger: 23px;
+$text_white: #fff;
+$text_dark: #333;
+$text_light_grey: #999;
+$text_grey: #555;
+
+@font-face {
+  //fonts optimized for web using http://www.fontsquirrel.com/tools/webfont-generator
+  font-family: 'seanavigationregular';
+  src: url('../fonts/seanavigation-webfont.eot');
+  src: url('../fonts/seanavigation-webfont.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/seanavigation-webfont.woff') format('woff'),
+  url('../fonts/seanavigation-webfont.ttf') format('truetype'),
+  url('../fonts/seanavigation-webfont.svg#seanavigationregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@mixin label_text {
+    font-size: $text_tinier;
+    color: $text_grey;
+    font-weight: bold;
+}
+
+@mixin category_link_text {
+    font-size: $text_normal;
+    font-weight: normal;
+    line-height: 20px;
+}
+
+
+.eniro_font {
+  font-family: 'seanavigationregular', Arial, sans-serif;
+}

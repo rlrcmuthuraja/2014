@@ -1,0 +1,43 @@
+@import 'colours';
+@import 'positions';
+@import 'util';
+@import 'text';
+
+#cookie_info {
+  background-color: $white;
+  color: $darker_grey;
+  position: relative;
+  padding: $margin_y 0;
+  min-height: $cookie_info_height;
+  z-index: 1000;
+  width: 100%;
+}
+
+#cookie_info.smartbanner_active {
+  top: $smartbanner_height;
+}
+
+#cookie_info a {
+  font-weight: bold;
+}
+
+#cookie_info p {
+  //margin-top: $margin_y;
+  margin-left: $margin_x;
+  margin-right: $margin_x;
+  font-size: $text_tiny;
+}
+
+#cookie_info .accept_button {
+  color: $white;
+  background-color: $darker_grey;
+  @include border_radius(14px);
+  position: relative;
+  text-align: center;
+  margin: $margin_y auto 0;
+  font-weight: normal;
+  padding: 5px;
+  width: 150px;
+  display: block;
+  text-size: $text_small;
+}

@@ -1,0 +1,71 @@
+$sprite_width: 500px;
+$sprite_height: 500px;
+$menu_result_link_color: #ffcc00;
+$main_menu_toggle_y: 52px;
+$menu_color_text: #fc0;
+$margin_y_jump_to_online:30px;
+
+@mixin sprite {
+    background-size: $sprite_width $sprite_height;
+    background-image: url('../images/2xsprite_swden_gs.png');
+}
+
+$logo_height: 38px;
+@mixin logo_small {
+    @include sprite;
+    top: 24px;
+    width: 120px;
+    height: $logo_height;
+    background-position: 0px -49px;
+}
+
+$highlight_colour1: #fc0;
+
+@mixin more_choices {
+    @include sprite;
+    width: 104px;
+    height: 32px;
+    background-position: -116px -85px;
+}
+
+@mixin review_provider {
+    background-image: url('../images/rejta_se.png');
+    background-size: 100px 21px;
+    width: 100px;
+    height: 20px;
+}
+
+@mixin change_maps_selected {
+  @include sprite;
+  width: 30px;
+  height: 34px;
+  background-position: -1px -298.5px;
+}
+
+@mixin change_maps {
+  @include sprite;
+  width: 30px;
+  height: 34px;
+  background-position: 0px -333px;
+}
+
+@mixin change_categories_selected {
+  @include sprite;
+  width: 30px;
+  height: 34px;
+  background-position: -390px -265px;
+}
+
+@mixin change_categories {
+  @include sprite;
+  width: 30px;
+  height: 34px;
+  background-position: -357px -265px;
+}
+
+@mixin menu_toggles {
+  @include sprite;
+  width: 34px;
+  height: 34px;
+  background-position: -819px -265px;
+}

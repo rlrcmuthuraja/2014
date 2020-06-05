@@ -1,0 +1,37 @@
+@import 'imports';
+
+#header_logo {
+    position: absolute;
+    left: $margin_x;
+    @include logo_small;
+    z-index: 200;
+}
+
+#header_search {
+    position: relative;
+    top: $search_button_top;
+    right: $margin_x;
+    float: right;
+    @include searchbar_button;
+    z-index: 1001;
+}
+
+#header_background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: $header_height;
+}
+
+#header_background.smartbanner_active.cookie_info_active {
+  height: $header_height + $smartbanner_height + $cookie_info_height;
+}
+
+#header_background.cookie_info_active {
+  height: $header_height + $cookie_info_height;
+}
+
+#header_background.smartbanner_active {
+  height: $header_height + $smartbanner_height;
+}

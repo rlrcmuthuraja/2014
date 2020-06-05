@@ -1,0 +1,29 @@
+@import 'imports';
+
+.back {
+    position: absolute;
+    top: 6px;
+    left: $margin_x;
+    padding: 7px 12px 8px 10px;
+    @include border_radius(30px);
+
+    background-color: $darker_grey;
+    color: $highlight_colour1;
+}
+
+.back .icon {
+    display: inline-block;
+    position: relative;
+    top: 2px;
+    @include back_icon;
+}
+
+.back .text {
+    display: inline-block;
+    position: relative;
+    left: 3px;
+    font-weight: bold;
+    color: $lighter_grey;
+
+
+}

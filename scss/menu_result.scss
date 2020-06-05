@@ -1,0 +1,242 @@
+@import "imports";
+
+#menu>.result {
+    padding: 0 0;
+    position: relative;
+    top: 7px;
+    display: table;
+    width: 88%;
+    float: left;
+    margin-bottom: 10px;
+}
+
+#menu>.result>li {
+    display: table-cell;
+}
+
+#menu>.result>li>a {
+    display: block;
+    margin: 0 0 0 3px;
+    padding: 2px 0;
+    height: 24px;
+    min-width: 40px;
+    text-align: center;
+    background-color: $dark_grey;
+    color: $menu_result_link_color;
+}
+
+#menu>.result>li>a.disabled {
+    color: $medium_grey;
+}
+
+#menu>.result>li>a>.category_filter {
+    margin: 0 10%;
+    height: 25px;
+    position: relative;
+    font-weight: bold;
+}
+
+#menu>.result>li>a>.data {
+    color: $highlight_colour1;
+    float: left;
+    height: 22px;
+}
+
+sup {
+	font-size: $text_tiny;
+	top: -3px;
+}
+
+#menu>.result>li.selected>a {
+    background-color: $darker_grey;
+    color: $lighter_grey
+}
+
+
+#menu>.result>li:first-child>a {
+    -moz-border-radius-topleft: 20px;
+    -moz-border-radius-bottomleft: 20px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+#menu>.result>li:last-child>a,
+#menu>.result>li.last-visible>a {
+    margin-right: 0;
+    min-width: 20px;
+    -moz-border-radius-topright: 20px;
+    -moz-border-radius-bottomright: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+#menu ul.result li a div div.icon {
+    height: 22px;
+    width: 22px;
+    position: relative;
+    margin: 0;
+    float: left;
+}
+
+#menu ul.result li a div span {
+    float: left;
+    margin-top: 5px;
+}
+
+#menu ul.result li a div span.data {
+    margin-left: 3px;
+    font-weight: normal;
+}
+
+#menu div.toggle_settings {
+    @include border_radius(28px);
+
+    width: 28px;
+    height: 28px;
+    right: 1.875%;
+    top: 7px;
+    float: right;
+    position: relative;
+    background-color: $dark_grey;;
+}
+
+#menu div.toggle_settings div.icon {
+    @include toggle_settings;
+    position: relative;
+    margin: auto;
+    top: 2.5px;
+    left: 0.5px;
+}
+
+#company_icon {
+    @include company_icon;
+}
+
+#person_icon {
+    @include person_icon;
+}
+
+#location_icon {
+    @include location_icon;
+}
+
+#result_settings {
+    background-color: $medium_grey;
+    width: 100%;
+}
+
+#result_settings .heading {
+    background-color: $darker_grey;
+    color: $light_grey;
+    float: left;
+    clear: left;
+    width: 100%;
+    height: 28px;
+}
+
+#result_settings .heading span{
+    text-transform: uppercase;
+    position: relative;
+    top: 5px;
+    left: $margin_x;
+    font-weight: bold;
+    font-size: $text_small;
+}
+
+#result_settings ul {
+    background-color: $grey_menu;
+}
+
+#result_settings>.sorting {
+    position: relative;
+    display: table;
+    width: 100%;
+    clear: left;
+    float: left;
+    height: 42px;
+}
+
+#result_settings>.sorting>li {
+    display: table-cell;
+    width: 33.33333333%;
+}
+
+#result_settings>.sorting>li>a {
+    display: block;
+    padding: $margin_x 0;
+    margin: 0 0 0 $margin_x;
+    height: 100%;
+    color: $lighter_grey;
+}
+
+#result_settings ul.sorting li a div.icon {
+    width: 22px;
+    height: 22px;
+    position: relative;
+    float: left;
+    margin: 0 auto;
+}
+
+#result_settings ul.sorting li a span {
+    position: relative;
+    float: left;
+    margin: 0 auto;
+}
+
+#sort_alphabetically div.icon{
+    @include sort_alphabetically;
+}
+
+#sort_proximity div.icon{
+    @include sort_proximity;
+}
+
+#sort_rating div.icon{
+    @include sort_rating;
+}
+
+#result_settings ul.expand_search {
+    position: relative;
+    display: table;
+    width: 100%;
+    clear: left;
+    float: left;
+}
+#result_settings ul.expand_search li {
+    min-height: 32px;
+    width: 100%;
+    border-bottom: 1px solid $medium_grey;
+}
+#result_settings ul.expand_search li a {
+    color: $lighter_grey;
+    position: relative;
+}
+
+#result_settings ul.expand_search li a.disabled {
+    color: $medium_grey;
+    opacity: 0.3;
+}
+
+#result_settings ul.expand_search li a p {
+    line-height: 42px;
+    margin-left: $margin_x;
+}
+
+#result_settings ul.expand_search li a div.icon {
+    @include expand_search;
+    position: relative;
+    float: right;
+    margin-right: 8%;
+    margin-top: -28px;
+}
+#result_settings ul.expand_search li a p span.searchword {
+	font-weight: bold;
+}
+
+#sort_info {
+	text-align: center;
+	padding: 0 auto;
+	font-weight: bold;
+	font-size: $text_huge;
+	height: 32px;
+}

@@ -1,0 +1,319 @@
+@import 'imports';
+
+#main_menu {
+	position: absolute;
+    float: left;
+	width: 100%;
+	// merge conflict for the next line, needs to recheck
+	//margin-top: -$header_height - $margin_y;
+	margin-top: 0;
+    min-height: 100%;
+	z-index: 100;
+	background-color: $medium_grey;
+}
+
+#main_menu div.sub_menu_toggles div.first,
+#main_menu div.sub_menu_toggles div.first div{
+	position: relative;
+}
+
+#main_menu div.sub_menu_toggles div.submenu_toggle {
+  clear: left;
+  margin-top: 30px;
+}
+#main_menu div.sub_menu_toggles div {
+	height: 36px;
+	position: relative;
+	float: left;
+	clear: none;
+}
+
+#main_menu div.sub_menu_toggles div div.filler {
+    width: 80px;
+    z-index: -1;
+}
+
+#main_menu div.sub_menu_toggles div.selected div.filler {
+    border-radius: 0px 30px 30px 0px;
+    -moz-border-radius: 0px 30px 30px 0px;
+    -webkit-border-radius: 0px 30px 30px 0px;
+    border: 0px solid #222222;
+    background-color: $dark_grey;
+}
+
+
+#main_menu div.sub_menu_toggles div div.icon {
+  margin-left: -29px;
+}
+#main_menu div.sub_menu_toggles div.selected div.icon {
+    margin-left: -23px;
+}
+#main_menu div.sub_menu_toggles div.back_icon {
+    margin-left: -29px;
+}
+#main_menu div.sub_menu_toggles div.icon,
+#main_menu div.sub_menu_toggles div.back_icon {
+    float: left;
+    z-index: 5;
+}
+
+#main_menu div.sub_categories {  // This calss will replace the class sub_menus
+    top: $header_height + 55;
+    bottom: 0px;
+    width: 80%;
+    left: 70px;
+    position: relative;
+    border-left: 1px solid;
+}
+
+#category_ul.sub_categories   // This class will be used on UL id="category_ul"
+{
+    margin-top: 66px;
+}
+
+#main_menu div.sub_menu_toggles div a {
+	position: relative;
+	left: -32px;
+    float: left;
+    z-index: 2;
+}
+
+#main_menu div.sub_menu_toggles div.selected a {
+    color: white;
+    border-radius: 0px 30px 30px 0px;
+    -moz-border-radius: 0px 30px 30px 0px;
+    -webkit-border-radius: 0px 30px 30px 0px;
+
+    //hack for Samsung Galaxy S4 border radius
+    border-top-left-radius: 0px;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 0px;
+
+    border: 0px solid #222222;
+    background-color: $dark_grey;
+}
+
+#main_menu div.sub_menu_toggles div a span.toggle_text {
+    display: none;
+    color: $white;
+    position: relative;
+    float: left;
+    margin-left: 0px;
+    padding: $margin_y $margin_x $margin_y 0;
+    z-index: -2;
+    max-width: 55%;
+}
+
+#main_menu div.sub_menu_toggles div.selected a span.toggle_text {
+    display: block;
+}
+
+#main_menu div.sub_menus div a div.icon {
+    margin: 0 auto;
+}
+
+#main_menu div.sub_menu_toggles div a div.back_icon {
+    @include menu_toggles;
+}
+#main_menu div.sub_menu_toggles div.maps a div.icon {
+    @include change_maps;
+}
+
+#main_menu div.sub_menu_toggles div.selected a div.back_icon {
+    display: none;
+}
+#main_menu div.sub_menu_toggles div.maps.selected a div.icon {
+    @include change_maps_selected;
+}
+
+#main_menu div.sub_menus div.maps a span {
+    position: relative;
+    float: left;
+    clear: left;
+    color: $white;
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: 5px;
+}
+
+#main_menu div.sub_menu_toggles div.categories.selected a div.icon {
+    @include change_categories_selected;
+}
+
+#main_menu div.sub_menu_toggles div.categories a div.icon {
+    @include change_categories;
+}
+
+#categories_list {
+    //height: 88%;
+}
+
+#categories_list a {
+    color: $lighter_grey;
+}
+
+#categories_list .subcategory {
+    margin: 10px 0 0 10px;
+}
+
+#main_menu div.sub_menus div.maps a {
+    position: relative;
+    float: left;
+    width: 45%;
+    height: 40%;
+    margin-top: 5%;
+}
+
+#main_menu div.sub_menus div a div.cat_icon {
+  margin: 5px 0 0 10px;
+  float: left;
+  position: relative;
+}
+
+#categories_list .cat_health {
+  @include cat_health;
+}
+#categories_list .cat_accomodation {
+  @include cat_accomodation;
+}
+#categories_list .cat_clothing {
+  @include cat_clothing;
+}
+#categories_list .cat_shopping {
+  @include cat_shopping;
+}
+#categories_list .cat_food {
+  @include cat_food;
+}
+#categories_list .cat_sport {
+  @include cat_sport;
+}
+#categories_list .cat_transport {
+  @include cat_transport;
+}
+#categories_list .cat_nightlife {
+  @include cat_nightlife;
+}
+#categories_list .cat_culture {
+  @include cat_culture;
+}
+
+#main_menu div.sub_menus div.categories a span.cat_label {
+    position: relative;
+    float: left;
+    color: $lighter_grey;
+    display: block;
+    width: auto;
+    margin-top: 5px;
+}
+
+#main_menu div.sub_menus div.categories a span {
+    position: relative;
+    float: left;
+    color: $white;
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: 5px;
+}
+
+#category_ul {
+    display: block;
+    margin: 20px auto 0 auto;
+    width: 100%;
+    overflow-x: auto;
+    text-align: left;
+    text-indent: 10px;
+    z-index: 3;
+}
+
+#category_ul a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    float: left;
+    padding: 10px 0px 10px 0px;
+}
+
+#category_ul li{
+    width:100%;
+    float: left;
+}
+
+#category_ul::-webkit-scrollbar {
+    display: none;
+}
+
+#category_ul .subcategory {
+    display: none;
+}
+
+
+#street_map div.icon {
+    @include street_map;
+}
+
+#hybrid_map div.icon {
+    @include hybrid_map;
+}
+
+#aerial_map div.icon {
+    @include aerial_map;
+}
+
+#nautical_map div.icon {
+    @include nautical_map;
+}
+
+#street_map.selected div.icon {
+    @include street_map_selected;
+}
+
+#hybrid_map.selected div.icon {
+  @include hybrid_map_selected;
+}
+
+#aerial_map.selected div.icon {
+  @include aerial_map_selected;
+}
+
+#nautical_map.selected div.icon {
+  @include nautical_map_selected;
+}
+
+#main_menu div.sub_menus {
+    margin-top: 110px;
+    bottom: 0px;
+    max-width: 77%;
+    left: 70px;
+    position: relative;
+    border-left: 1px solid;
+    float: left;
+}
+
+#main_menu div.sub_menu_toggles {
+    top: $header_height+20;
+    position: absolute;
+}
+
+#menu_toggle {
+	position: relative;
+	width: 100px;
+	height: $header_height - $margin_y;
+	padding-left: $margin_x;
+	padding-top: $margin_y;
+	z-index: 200;
+    float: left;
+    margin: 0;
+}
+
+#menu_toggle span {
+	color: $menu_color_text;
+	font-size: $text_tiny;
+	font-weight: bold;
+    position: relative;
+    top: $main_menu_toggle_y;
+}

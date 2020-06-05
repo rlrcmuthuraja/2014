@@ -1,0 +1,569 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta http-equiv="cache-control" content="max-age=3600, must-revalidate" />
+
+    <!-- CSS-BEGIN -->
+    <link rel="stylesheet" type="text/css" href="css/reset.css"/>
+    <link rel="stylesheet" type="text/css" href="css/body.css"/>
+    <link rel="stylesheet" type="text/css" href="css/header.css"/>
+    <link rel="stylesheet" type="text/css" href="css/toggle.css"/>
+    <link rel="stylesheet" type="text/css" href="css/back.css"/>
+    <link rel="stylesheet" type="text/css" href="css/menu.css"/>
+    <link rel="stylesheet" type="text/css" href="css/main_menu.css"/>
+    <link rel="stylesheet" type="text/css" href="css/menu_result.css"/>
+    <link rel="stylesheet" type="text/css" href="css/menu_details.css"/>
+    <link rel="stylesheet" type="text/css" href="css/spinner.css"/>
+    <link rel="stylesheet" type="text/css" href="css/page_loader.css"/>
+    <link rel="stylesheet" type="text/css" href="css/map.css"/>
+    <link rel="stylesheet" type="text/css" href="css/content.css"/>
+    <link rel="stylesheet" type="text/css" href="css/search.css"/>
+    <link rel="stylesheet" type="text/css" href="css/main_search.css"/>
+    <link rel="stylesheet" type="text/css" href="css/route_search.css"/>
+    <link rel="stylesheet" type="text/css" href="css/route_result.css"/>
+    <link rel="stylesheet" type="text/css" href="css/info.css"/>
+    <link rel="stylesheet" type="text/css" href="css/stars.css"/>
+    <link rel="stylesheet" type="text/css" href="css/result.css"/>
+    <link href="css/mobiscrollcore.css" rel="stylesheet" type="text/css" />
+    <link href="css/mobiscrollanim.css" rel="stylesheet" type="text/css" />
+    <link href="css/mobiscrollios.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="css/jquery.smartbanner.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="css/cookie.css" type="text/css" media="screen">
+    <!-- CSS-END -->
+
+    <!-- JS-BEFORE-BEGIN -->
+    <script type="text/javascript" src="init.js"></script>
+    <script type="text/javascript" src="constants.js"></script>
+    <script type="text/javascript" src="norway.js"></script>
+    <script type="text/javascript" src="augmentation.js"></script>
+    <script type="text/javascript" src="write.js"></script>
+    <!-- JS-BEFORE-END -->
+
+    <link rel="icon" href="favicon.ico" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="apple-touch-icon" href="favicon.ico" />
+    <link rel="apple-touch-icon-precomposed" href="favicon.ico"/>
+
+<!-- HEADLOGG-NORWAY -->
+<!-- HEADLOGG-DENMARK -->
+<!-- HEADLOGG-SWEDEN -->
+
+    <!-- TITLEREPLACE -->
+
+</head>
+<body>
+<noscript>
+    <!-- NOSCRIPT-CONTENT -->
+</noscript>
+<div>
+    <img id="roi_image" src="" alt="" style="display: none;" />
+</div>
+<div id="map">
+    <!-- container for the map -->
+</div>
+<div id="map_controller">
+</div>
+<div id="map_copyright">
+
+</div>
+<div id="map_page">
+    <a id="zoom_in" href="javascript:E.map.zoomIn();"></a>
+    <a id="zoom_out" href="javascript:E.map.zoomOut();"></a>
+    <a id="localise" href="javascript:E.mapPage.localise();"></a>
+</div>
+<div id="search" class="no_map">
+    <form class="search_field_single" action="javascript:E.searchPage.searchSingle();">
+        <fieldset>
+            <input type="submit" class="search_submit" value=""/>
+        </fieldset>
+
+        <div class="field_container">
+            <div class="search_input">
+                <input type="text" id="search_single" onkeyup="javascript:E.searchPage.textSuggestion();" />
+                <a id="clear_search" href="javascript: E.searchPage.clearSearch();" style="display: none;">
+                    <div class="icon"></div>
+                    <span>x</span>
+                </a>
+            </div>
+            <div id="slogan">
+                <script type="text/javascript">E.w('slogan');</script>
+            </div>
+            <div id="search_help">
+                <script type="text/javascript">E.w('searchHelp');</script>
+            </div>
+            <ul id="autocomplete">
+            </ul>
+        </div>
+    </form>
+
+    <a class="info" href="#infoMenu"></a>
+    <div id="full_site">
+        <a href="javascript: E.comm.goToFullWebsite();">
+            <script type="text/javascript">E.w('fullSite');</script>
+        </a>
+    </div>
+    <div id="publisher">
+        <script type="text/javascript">E.w('publisher');</script>
+    </div>
+    <a id="show_map" href="#map" style="display: none;"></a>
+</div>
+<div id="route_search" class="no_map" style="display: none;">
+    <form class="search_field_double" action="javascript:E.routeSearch.search();">
+        <fieldset>
+            <input type="submit" class="search_submit" value=""/>
+        </fieldset>
+
+        <div class="field_container">
+            <div class="search_input_route">
+                <input type="text" id="route_search_from"/>
+            </div>
+            <div class="search_input_route">
+                <input type="text" id="route_search_to"/>
+            </div>
+            <a class="swap" href="javascript:E.routeSearch.swap()">
+                <div></div>
+            </a>
+        </div>
+    </form>
+</div>
+<div id="header_background" class="no_map">
+
+</div>
+<a id="header_search" href="javascript: E.navigation.showSearchPage();">
+    <!-- search button for the header -->
+</a>
+<a id="menu_toggle" href="javascript:E.display.toggleMainMenu();" class="toggle">
+    <span><script>E.w('menu');</script></span>
+    <div id="header_logo">
+        <!-- logo for the header -->
+    </div>
+</a>
+
+<div id="main_menu" style="display: none;">
+    <div class="sub_menu_toggles" id="submenu_toggles">
+        <div class="submenu_toggle categories selected first" id="categories_toggle">
+            <a href="javascript: E.display.selectMenu('categories');">
+                <div class="filler"><!-- background color --></div>
+                <div class="back_icon"><!-- BACKGROUND ICON --></div>
+                <div class="icon"><!-- ICON FOR TOGGLE --></div>
+                <span class="toggle_text"></span>
+            </a>
+        </div>
+        <div class="submenu_toggle maps" id="maps_toggle">
+            <a href="javascript: E.display.selectMenu('maps');">
+                <div class="filler"><!-- background color --></div>
+                <div class="back_icon"><!-- BACKGROUND ICON --></div>
+                <div class="icon"><!-- ICON FOR TOGGLE --></div>
+                <span class="toggle_text">
+                    <script type="text/javascript">
+                        E.w('mapTypes');
+                    </script>
+                </span>
+            </a>
+        </div>
+
+    </div>
+    <div class="sub_menus" id="sub_menus">
+        <div class="submenu maps" id="map_types" style="display:none;">
+            <a id="street_map" class="selected" href="javascript: E.map.vectorMap();">
+                <div class="icon"><!-- ICON FOR STREET MAP --></div>
+                <span><script type="text/javascript">E.w('vector');</script></span>
+            </a>
+            <a id="hybrid_map" href="javascript: E.map.hybridMap();">
+                <div class="icon"><!-- ICON FOR HYBRID MAP --></div>
+                <span><script type="text/javascript">E.w('hybrid');</script></span>
+            </a>
+            <a id="aerial_map" href="javascript: E.map.aerialMap();">
+                <div class="icon"><!-- ICON FOR AERIAL MAP --></div>
+                <span><script type="text/javascript">E.w('aerial');</script></span>
+            </a>
+            <a id="nautical_map" href="javascript: E.map.nauticalMap();">
+                <div class="icon"><!-- ICON FOR NAUTICAL MAP --></div>
+                <span><script type="text/javascript">E.w('nautical');</script></span>
+            </a>
+        </div>
+
+        <div class="submenu categories" id="categories_list">
+            <ul id="category_ul">
+            </ul>
+        </div>
+
+	</div>
+</div>
+
+<a id="toggle" href="javascript:E.toggle.toggle();" class="up" style="display: none;">
+    <div class="icon"></div>
+</a>
+
+<!-- Route navigation -->
+
+<div id="route_navigation" style="display: none;">
+    <a href="javascript:E.routeResult.toggleUp();" class="toggle"></a>
+    <div class="container">
+        <a href="javascript:E.routeResult.prevInstruction();" class="left"></a>
+        <a href="javascript:E.routeResult.nextInstruction();" class="right"></a>
+        <div class="middle">text</div>
+    </div>
+</div>
+
+<div id="content" style="display: none;">
+    <div id="menu">
+        <a class="back" id="back" href="javascript:history.back();">
+            <div class="icon"></div>
+            <div class="text">
+                <script type="text/javascript">E.w('back');</script>
+            </div>
+            <!-- back button goes here. -->
+        </a>
+        <a class="back" id="route_back">
+            <div class="icon"></div>
+            <div class="text">
+                <script type="text/javascript">E.w('back');</script>
+            </div>
+        </a>
+
+        <a id="nearby_stations_back" class="back" href="javascript:history.back();">
+            <span class="eniro_font">o</span>
+            <span class="text"></span>
+        </a>
+        <div class="nearby_stations_info">
+            <span class="right text">
+                <script type="text/javascript">
+                    E.w('stations');
+                </script>
+            </span>
+        </div>
+        <div id="route_result" style="display: none;">
+            <div class="info">
+                <div class="left">
+                    <a class="route_back" href="javascript:history.back();">
+                        <div class="arrow"></div>
+                    </a>
+
+                    <div class="time_symbol"></div>
+                    <div class="time"></div>
+                </div>
+                <div class="right">
+                    <div class="from"></div>
+                    <div class="distance"></div>
+                    <div class="to"></div>
+                    <a class="more" id="route_toggle"></a>
+                </div>
+            </div>
+            <div class="pub_route_info">
+                <div class="left">
+                    <a id="pub_route_back" class="pub_route_back" href="#">
+                        <span class="icon eniro_font">o</span>
+                    </a>
+                    <span class="info_text"></span>
+                </div>
+                <div class="right">
+                    <a class="pub_route_setting" href="#">
+                        <span class="text"></span>
+                        <span class="icon eniro_font">æ</span>
+                    </a>
+                </div>
+            </div>
+
+
+            <form id="pub_route_advanced">
+                <div class="cell">
+                    <a id="pub_avoid_bus" href="#" class="avoid_button" data-avoid="bus">
+                        <span class="icon eniro_font">B</span>
+                        <span class="text">BUSS</span>
+                    </a>
+                </div>
+                <div class="cell">
+                    <a id="pub_avoid_train" href="#" class="avoid_button" data-avoid="train">
+                        <span class="icon eniro_font">(</span>
+                        <span class="text">TOG</span>
+                    </a>
+                </div>
+                <div class="cell">
+                    <a id="pub_avoid_tram" href="#" class="avoid_button" data-avoid="tram">
+                        <span class="icon eniro_font">[</span>
+                        <span class="text">TRIKK</span>
+                    </a>
+                </div>
+                <div class="cell">
+                    <a id="pub_avoid_metro" href="#" class="avoid_button" data-avoid="metro">
+                        <span class="icon eniro_font">?</span>
+                        <span class="text">T-BANE</span>
+                    </a>
+                </div>
+                <div class="cell">
+                    <a id="pub_avoid_flight" href="#" class="avoid_button" data-avoid="flight">
+                        <span class="icon eniro_font">D</span>
+                        <span class="text">FLY</span>
+                    </a>
+                </div>
+                <div class="cell">
+                    <a id="pub_avoid_expBoat" href="#" class="avoid_button" data-avoid="expBoat">
+                        <span class="icon eniro_font">]</span>
+                        <span class="text">HURTIGBÅT</span>
+                    </a>
+                </div>
+                <div class="cell">
+                    <a id="pub_avoid_ship" href="#" class="avoid_button" data-avoid="ship">
+                        <span class="icon eniro_font">]</span>
+                        <span class="text">SKIP</span>
+                    </a>
+                </div>
+                <div class="cell">
+                    <a id="pub_avoid_ferry" href="#" class="avoid_button" data-avoid="ferry">
+                        <span class="icon eniro_font">]</span>
+                        <span class="text">FERJE</span>
+                    </a>
+                </div>
+                <a class="confirm_button" href="#">
+                    <span>OPPDATER RUTE</span>
+                </a>
+            </form>
+            <form class="advanced">
+                <div class="pref">
+                    <a class="fastest" href="javascript:E.routeResult.setShortest(false);">
+                        <script type="text/javascript">E.w('fastest');</script>
+                        <span>(<script type="text/javascript">E.w('selected');</script>)</span></a>
+                    <a class="shortest" href="javascript:E.routeResult.setShortest(true);">
+                        <script type="text/javascript">E.w('shortest');</script>
+                        <span>(<script type="text/javascript">E.w('selected');</script>)</span></a>
+                </div>
+                <div class="avoid">
+                    <script type="text/javascript">E.w('avoid');</script>
+                    <input id="avoid_highway" class="highway" type="checkbox">
+                    <label for="avoid_highway" onclick="">
+                        <script type="text/javascript">E.w('highway');</script>
+                    </label>
+                    <input id="avoid_ferry" class="ferry" type="checkbox">
+                    <label for="avoid_ferry" onclick="">
+                        <script type="text/javascript">E.w('ferry');</script>
+                    </label>
+                </div>
+            </form>
+            <form class="location search_field_double">
+                <div class="field_container">
+                    <div class="search_input_route">
+                        <input type="text" id="route_result_from" name="from"/>
+                        <ul class="route_autosuggest"></ul>
+                    </div>
+                    <div class="search_input_route">
+                        <input type="text" id="route_result_to" name="to"/>
+                        <ul class="route_autosuggest"></ul>
+                    </div>
+                </div>
+                <a class="swap" href="javascript:E.routeResult.swap()">
+                    <div></div>
+                </a>
+            </form>
+            <div class="route_tabs">
+                <div id="car_trans_label" class="tab_button_wrapper">
+                    <div class="tab_button">
+                        <div>
+                            <a id="car_trans_button" class="active" href="javascript:E.routeResult.search()">
+                                <span class="trans_icon eniro_font">
+                                    <script type="text/javascript">E.w('carTrans');</script>
+                                </span>
+                                <span class="text">
+                                    <script type="text/javascript">E.w('carTransText');</script>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div id="pub_trans_label" class="tab_button_wrapper">
+                    <div class="tab_button">
+                        <div>
+                            <a id="pub_trans_button" href="javascript:E.routeSearch.pubTransSearch()">
+                                <span class="trans_icon eniro_font">
+                                    <script type="text/javascript">E.w('pubTrans');</script>
+                                </span>
+                                <span class="text">
+                                    <script type="text/javascript">E.w('pubTransText');</script>
+                                </span>
+                            </a>
+                            <span id="travel_type_container" class="extra"></span>
+                            <div class="right inline">
+                                <span id="travel_time_container" class="extra realtime"></span>
+                                <span class="arrow extra eniro_font">p</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <ul class="result">
+            <!-- Menu buttons for result categories goes here. -->
+            <li class="company">
+                <a id="company_category" href="#">
+                    <div class="category_filter">
+                        <span>
+                            <script type="text/javascript">E.w('company');</script>
+                        </span>
+                        <span class="data"></span>
+                    </div>
+                </a>
+            </li>
+            <li class="person">
+                <a id="person_category" href="#">
+                    <div class="category_filter">
+                        <span>
+                            <script type="text/javascript">E.w('person');</script>
+                        </span>
+                        <span class="data"></span>
+                    </div>
+                </a>
+            </li>
+            <li class="location">
+                <a id="location_category" href="#">
+                    <div class="category_filter">
+                        <span>
+                            <script type="text/javascript">E.w('location');</script>
+                        </span>
+                        <span class="data"></span>
+                    </div>
+                </a>
+            </li>
+        </ul>
+        <div class="toggle_settings">
+            <a href="javascript: E.display.content.menu.resultSettings.toggleResultSettings();">
+                <div class="icon"></div>
+            </a>
+        </div>
+        <div class="details">
+            <!-- opening hours and ratings goes here. -->
+        </div>
+        <div class="route_select">
+            <!-- route selection info (From: Uppsala) goes here -->
+        </div>
+        <div class="route">
+            <!-- route info (distance, time) goes here -->
+        </div>
+    </div>
+    <div id="result_settings" style="display: none;">
+        <div class="heading sort">
+            <span><script type="text/javascript">E.w('sortingHeader');</script> </span>
+        </div>
+        <ul class="sorting">
+            <!-- Menu buttons for result sorting goes here. -->
+            <li class="proximity">
+                <a id="sort_proximity" href="javascript:E.display.content.menu.resultSettings.sorting.sortProximity();">
+                    <div class="icon"></div>
+                    <span><script type="text/javascript">E.w('sortProx');</script></span>
+                </a>
+            </li>
+            <li class="alphabetical">
+                <a id="sort_alphabetically" href="javascript:E.display.content.menu.resultSettings.sorting.sortAlphabetically();">
+                    <div class="icon"></div>
+                    <span><script type="text/javascript">E.w('sortAlpha');</script></span>
+                </a>
+            </li>
+            <li class="rating">
+                <a id="sort_rating" href="javascript:E.display.content.menu.resultSettings.sorting.sortRating();">
+                    <div class="icon"></div>
+                    <span><script type="text/javascript">E.w('sortRating');</script></span>
+                </a>
+            </li>
+        </ul>
+        <div class="heading expand">
+            <span><script type="text/javascript">E.w('expandSearch');</script></span>
+        </div>
+        <ul class="expand_search">
+            <!-- Menu buttons for result expand search. -->
+            <li class="zoom_level">
+                <a id="search_expand_link" href="#">
+                    <p class="area"><script type="text/javascript">E.w('expandSearchArea');</script></p>
+                    <div class="icon"></div>
+                </a>
+            </li>
+            <li class="region" style="display: none;">
+                <a id="region_expand_link" href="#">
+                    <p class="area"></p>
+                    <div class="icon"></div>
+                </a>
+            </li>
+            <li class="country">
+                <a id="country_expand_link" href="#">
+                    <p class="area">
+                    	<span class="searchword"></span>
+                    	<script type="text/javascript">E.w('inWholeCountry');</script>
+                    </p>
+                    <div class="icon"></div>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <ul id="list"></ul>
+    <div id="full_site_detail">
+        <a href="javascript: E.comm.goToFullWebsite();">
+            <script type="text/javascript">E.w('fullSite');</script>
+        </a>
+    </div>
+    <div id="refresher">
+        <div class="text"></div>
+        <div class="counter"></div>
+        <div class="spinner">
+            <div class="bar0"></div>
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+            <div class="bar4"></div>
+            <div class="bar5"></div>
+            <div class="bar6"></div>
+            <div class="bar7"></div>
+            <div class="bar8"></div>
+            <div class="bar9"></div>
+            <div class="bar10"></div>
+            <div class="bar11"></div>
+        </div>
+    </div>
+</div>
+
+<div id="pub_route_travel">
+    <form name="pub_route_travel" action="#pubRouteResult">
+        <span class="ok eniro_font">Ø</span>
+        <select id="travel_type" name="travel_type">
+            <option value="departure">Avgang</option>
+            <option value="arrival">Ankomst</option>
+        </select>
+        <input id="travel_time" type="datetime-local" class="travel_time" value="" />
+        <input type="hidden" name="travel_type_val" id="travel_type_val" value="" />
+        <input type="hidden" name="travel_time_val" id="travel_time_val" value="" />
+    </form>
+</div>
+
+<div id="page_loader">
+    <div class="spinner">
+        <div class="bar0"></div>
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+        <div class="bar4"></div>
+        <div class="bar5"></div>
+        <div class="bar6"></div>
+        <div class="bar7"></div>
+        <div class="bar8"></div>
+        <div class="bar9"></div>
+        <div class="bar10"></div>
+        <div class="bar11"></div>
+    </div>
+    <div class="status">
+    </div>
+</div>
+<div id="content_background"></div>
+
+<!-- JS-AFTER-BEGIN -->
+<script type="text/javascript" src="jquery-1.7.2.min.js"></script>
+
+<script type="text/javascript" src="page_init.js"></script>
+<!-- JS-AFTER-END -->
+
+<!-- LOGGING-2-SWEDEN -->
+<!-- LOGGING-2-NORWAY -->
+<!-- LOGGING-2-DENMARK -->
+
+</body>
+</html>

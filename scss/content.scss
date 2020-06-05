@@ -1,0 +1,69 @@
+@import 'imports';
+
+#content, #content_background {
+    top: $header_height;
+}
+
+#content {
+    position: absolute;
+    background-color: white;
+    width: 100%;
+    top: $header_height;
+    bottom: 0;
+}
+
+#content_background {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    background-color: white;
+    z-index: -1;
+}
+
+#content.cookie_info_active.smartbanner_active {
+  top: $header_height + $cookie_info_height + $smartbanner_height;
+}
+
+#content.cookie_info_active {
+  top: $header_height + $cookie_info_height;
+}
+
+#content.smartbanner_active {
+    top: $header_height + $smartbanner_height;
+}
+
+#list_loader {
+    border: 3px solid #4169e1;
+    height: 40px;
+}
+
+#list_loader .text {
+    display: inline-block;
+    float: left;
+}
+
+#list_loader .counter {
+    position: absolute;
+    left: 50%;
+    margin-left: -50px;
+    width: 100px;
+    text-align: center;
+}
+
+#list_loader .spinner {
+    position: relative;
+    display: inline-block;
+    float: right;
+    width: 33px;
+    height: 33px;
+}
+
+#list_loader .spinner div {
+    top: 16px;
+    left: 11px;
+    width: 3px;
+    height: 10px;
+    background-color: black;
+}
+
+
